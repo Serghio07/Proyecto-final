@@ -1,0 +1,25 @@
+/* Card del formulario */
+.contacto-card {
+    max-width: 500px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Íconos de redes sociales */
+  .icon {
+    width: 40px;
+  }
+  
+  /* Estilo del mapa */
+  .map {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
+  
+  /* Footer */
+  .contacto-footer {
+    background-color: #1C325B;
+    color: white;
+  }
+  
