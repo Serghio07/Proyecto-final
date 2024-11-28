@@ -1,38 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ContactService } from '../../services/contact.service';
-import { NgIf } from '@angular/common'; // Para usar directivas como *ngIf
+import { CommonModule } from '@angular/common';
+import { ContactoService } from '../../services/contacto.service';
 
 @Component({
   selector: 'app-contacto',
+  standalone: true, // Define el componente como standalone
+  imports: [CommonModule, ReactiveFormsModule], // Importa los módulos necesarios
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css'],
-  standalone: true,
-  imports: [ReactiveFormsModule], // Importa los módulos necesarios
 })
-export class ContactoComponent {
-  contactoForm: FormGroup;
+export class ContactoComponent implements OnInit {
+  contactoForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private contactService: ContactService) {
-    this.contactoForm = this.fb.group({
+  constructor(
+    private contactoService: ContactoService,
+    private formBuilder: FormBuilder
+  ) {}
+
+  ngOnInit(): void {
+    this.contactoForm = this.formBuilder.group({
       NombreCompleto: ['', [Validators.required, Validators.minLength(3)]],
       Email: ['', [Validators.required, Validators.email]],
       Mensaje: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
-  enviarContacto() {
+  enviarContacto(): void {
     if (this.contactoForm.valid) {
-      this.contactService.enviarContacto(this.contactoForm.value).subscribe({
-        next: (response) => {
-          alert('Mensaje enviado exitosamente');
+      const contactoData = this.contactoForm.value;
+      this.contactoService.createContacto(contactoData).subscribe({
+        next: () => {
+          alert('¡Tu mensaje ha sido enviado con éxito!');
+          this.contactoForm.reset(); // Limpia el formulario
         },
-        error: (error) => {
-          console.error('Error al enviar el mensaje:', error);
+        error: (err) => {
+          console.error('Error al enviar contacto:', err);
+          alert('Ocurrió un error. Por favor, intenta nuevamente.');
         },
       });
     } else {
-      alert('Por favor, completa todos los campos correctamente.');
+      alert('Por favor, completa todos los campos antes de enviar.');
     }
   }
+  
 }

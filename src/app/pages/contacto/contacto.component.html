@@ -5,39 +5,63 @@
   <!-- Formulario -->
   <div class="card contacto-card shadow-lg p-4">
     <div class="card-body">
-      <form>
-        <div class="mb-3">
-          <label for="nombre" class="form-label fw-bold">Tu Nombre</label>
+      <form [formGroup]="contactoForm" (ngSubmit)="enviarContacto()">
+        <div class="form-group mb-3">
+          <label for="nombreCompleto" class="form-label">Nombre Completo</label>
           <input
-            type="text"
-            id="nombre"
-            class="form-control form-control-lg"
-            placeholder="Escribe tu nombre"
+            id="nombreCompleto"
+            formControlName="NombreCompleto"
+            class="form-control"
+            placeholder="Ingresa tu nombre completo"
           />
+          <div
+            *ngIf="contactoForm.get('NombreCompleto')?.invalid && contactoForm.get('NombreCompleto')?.touched"
+            class="text-danger mt-1"
+          >
+            El nombre es obligatorio y debe tener al menos 3 caracteres.
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="correo" class="form-label fw-bold">Tu Correo</label>
+
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
           <input
+            id="email"
+            formControlName="Email"
             type="email"
-            id="correo"
-            class="form-control form-control-lg"
-            placeholder="Escribe tu correo"
+            class="form-control"
+            placeholder="Ingresa tu correo electrónico"
           />
+          <div
+            *ngIf="contactoForm.get('Email')?.invalid && contactoForm.get('Email')?.touched"
+            class="text-danger mt-1"
+          >
+            Ingresa un correo electrónico válido.
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="mensaje" class="form-label fw-bold">Mensaje</label>
+
+        <div class="form-group mb-4">
+          <label for="mensaje" class="form-label">Mensaje</label>
           <textarea
             id="mensaje"
-            class="form-control form-control-lg"
+            formControlName="Mensaje"
+            class="form-control"
             rows="4"
             placeholder="Escribe tu mensaje"
           ></textarea>
+          <div
+            *ngIf="contactoForm.get('Mensaje')?.invalid && contactoForm.get('Mensaje')?.touched"
+            class="text-danger mt-1"
+          >
+            El mensaje es obligatorio y debe tener al menos 10 caracteres.
+          </div>
         </div>
+
         <button
           type="submit"
-          class="btn btn-warning w-100 fw-bold btn-lg shadow-lg"
+          class="btn btn-primary w-100"
+          [disabled]="contactoForm.invalid"
         >
-          ENVIAR
+          Enviar
         </button>
       </form>
     </div>
@@ -70,7 +94,7 @@
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6432.906401220068!2d-68.11829963055428!3d-16.52463194704394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f20ee187a3103%3A0x2f2bb2b7df32a24d!2sUniversidad%20Cat%C3%B3lica%20Boliviana%20%22San%20Pablo%22!5e0!3m2!1ses-419!2sbo!4v1732773026255!5m2!1ses-419!2sbo"
       width="600"
       height="450"
-      style="border:0;"
+      style="border: 0"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"

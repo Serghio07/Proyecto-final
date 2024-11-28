@@ -1,58 +1,70 @@
-<div class="hola container d-flex flex-column align-items-center justify-content-center mt-5">
-    <!-- Título -->
-    <h1 class="text-center mb-4">Formulario de Pedido</h1>
-  
-    <!-- Formulario -->
-    <div class="card pedido-card shadow-lg p-4">
-      <div class="card-body">
-        <form >
-          
-          <!-- Producto -->
-          <div class="mb-3">
-            <label for="producto" class="form-label fw-bold">Producto</label>
-            <input
-              type="text"
-              id="producto"
-              formControlName="producto"
-              class="form-control form-control-lg"
-              placeholder="Escribe el nombre del producto"
-            />
-          </div>
-  
-          <!-- Tipo de Producto -->
-          <div class="mb-3">
-            <label for="tipoProducto" class="form-label fw-bold">Tipo de Producto</label>
-            <select
-              id="tipoProducto"
-              formControlName="tipoProducto"
-              class="form-select form-select-lg"
-            >
-              <option value="">Selecciona el tipo de producto</option>
-              <option value="electronic">Electrónica</option>
-              <option value="clothing">Ropa</option>
-              <option value="food">Comida</option>
-              <option value="furniture">Muebles</option>
-            </select>
-          </div>
-  
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label fw-bold">Email</label>
-            <input
-              type="email"
-              id="email"
-              formControlName="email"
-              class="form-control form-control-lg"
-              placeholder="Escribe tu correo electrónico"
-            />
-          </div>
-  
-          <!-- Botón Enviar -->
-          <button type="submit" class="btn btn-primary w-100 fw-bold btn-lg shadow-lg" [disabled]="!pedidosForm.valid">
-            Enviar Pedido
-          </button>
-        </form>
+<section class="container">
+  <header>Pedido de Ropa Deportiva</header>
+  <form action="#" class="form">
+    <!-- Datos del Cliente -->
+    <div class="input-box">
+      <label>Nombre Completo</label>
+      <input type="text" placeholder="Ingresa tu nombre completo" required />
+    </div>
+
+    <div class="input-box">
+      <label>Email</label>
+      <input type="email" placeholder="Ingresa tu correo electrónico" required />
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <label>Número Telefónico</label>
+        <input type="tel" placeholder="Ingresa tu número telefónico" required />
+      </div>
+      <div class="input-box">
+        <label>Dirección</label>
+        <input type="text" placeholder="Ingresa tu dirección completa" required />
       </div>
     </div>
-  </div>
-  
+
+    <!-- Detalles del Pedido -->
+    <div class="input-box">
+      <label>Tipo de Prenda</label>
+      <select>
+        <option hidden>Selecciona una prenda</option>
+        <option>Camiseta</option>
+        <option>Short</option>
+        <option>Pantalón</option>
+        <option>Chamarra</option>
+      </select>
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <label>Talla</label>
+        <select>
+          <option hidden>Selecciona una talla</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+      </div>
+      <div class="input-box">
+        <label>Color</label>
+        <input type="text" placeholder="Escribe el color de la prenda" required />
+      </div>
+    </div>
+
+    <!-- Cantidad y Nota -->
+    <div class="input-box">
+      <label>Cantidad</label>
+      <input type="number" placeholder="Número de prendas" required />
+    </div>
+
+    <div class="input-box">
+      <label>Notas Adicionales</label>
+      <textarea placeholder="Ejemplo: Personalización con logotipo o nombre" rows="4"></textarea>
+    </div>
+
+    <!-- Botón de Envío -->
+    <button>Realizar Pedido</button>
+  </form>
+</section>
