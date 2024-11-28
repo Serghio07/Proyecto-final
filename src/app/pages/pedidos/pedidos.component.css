@@ -1,94 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-/* Reset y configuración general */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #ff5722, #c62828); /* Fondo degradado */
-  font-family: "Poppins", sans-serif;
-}
-
-/* Contenedor principal */
 .container {
-  position: relative;
-  max-width: 700px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Fondo degradado elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la pantalla */
+  flex-direction: column; /* Elementos en columna */
+  text-align: center;
   width: 100%;
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
-  text-align: center; 
+  max-width: 600px; /* Ancho limitado para diseño limpio */
+  margin: auto;
+  padding: 40px; /* Espaciado interno cómodo */
+  border-radius: 20px; /* Bordes suaves */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  animation: fadeIn 1s ease-out; /* Animación de entrada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto dinámico */
+}
+
+.container:hover {
+  transform: scale(1.01); /* Sutil aumento en hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Más sombra en hover */
 }
 
 /* Título */
 .container header {
-  font-size: 1.8rem;
-  color: #333333;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #222222; /* Color más profesional */
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase; /* Todo en mayúsculas */
+  letter-spacing: 2px; /* Separación entre letras */
+  border-bottom: 2px solid #ff5722; /* Línea decorativa */
+  padding-bottom: 10px;
+  animation: slideIn 1.2s ease-out; /* Animación de entrada desde abajo */
 }
 
 /* Formulario */
 .container .form {
   width: 100%;
+  animation: fadeIn 1.5s ease-out; /* Animación de entrada */
 }
 
 .form .input-box {
   margin-top: 20px;
-  text-align: left; /* Alineación de etiquetas a la izquierda */
+  text-align: left; /* Alineación de las etiquetas */
 }
 
 .input-box label {
-  color: #333333;
+  color: #444444; /* Color neutro */
   font-weight: 500;
   margin-bottom: 5px;
-  display: block; /* Etiquetas en línea */
+  display: block;
+  font-size: 1.1rem;
+  animation: fadeInLabel 0.8s ease-out forwards;
 }
 
 .form :where(.input-box input, .select-box select, .input-box textarea) {
   width: 100%;
   height: 50px;
   font-size: 1rem;
-  color: #707070;
+  color: #555555;
+  background: #f9f9f9; /* Fondo claro */
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0 15px;
-  margin-top: 8px;
+  margin-top: 10px;
   outline: none;
-  transition: all 0.3s ease; /* Transición suave */
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px); /* Inicialmente desplazado */
+  animation: slideUp 1s ease-out forwards; /* Sube con animación */
 }
 
 .input-box textarea {
-  height: auto;
-  resize: none;
+  height: 100px; /* Altura fija para comodidad */
+  resize: none; /* Deshabilita el redimensionamiento */
   padding: 10px 15px;
 }
 
 .input-box input:focus,
 .input-box textarea:focus,
 .select-box select:focus {
-  border-color: #ff5722; /* Color de foco */
-  box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
-}
-
-/* Columnas */
-.form .column {
-  display: flex;
-  column-gap: 15px;
-}
-
-.form .column .input-box {
-  flex: 1;
+  border-color: #ff5722; /* Color de acento */
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.3); /* Efecto de foco */
 }
 
 /* Botón */
@@ -96,19 +90,78 @@ body {
   height: 55px;
   width: 100%;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: bold;
   color: #ffffff;
-  background: #ff5722;
+  background: linear-gradient(135deg, #ff5722, #e64a19); /* Botón degradado */
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 30px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  animation: bounceIn 1.8s ease-out; /* Animación de rebote en entrada */
 }
 
 .form button:hover {
-  background: #c62828;
-  transform: scale(1.05); /* Pequeño zoom al pasar el cursor */
+  background: linear-gradient(135deg, #e64a19, #c62828); /* Hover dinámico */
+  transform: scale(1.05); /* Aumenta ligeramente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Más sombra en hover */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInLabel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Responsivo */

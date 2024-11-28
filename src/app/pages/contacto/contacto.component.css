@@ -1,52 +1,37 @@
-/* General */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background: url('/assets/fondo.jpg') no-repeat center center/cover;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
 
 /* Sección de contacto */
 .contact-section {
+  background-color: gainsboro;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.contact-container {
-  display: flex;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  text-align: center; /* Centra el texto */
   width: 100%;
+  padding: 20px;
 }
 
+/* Contenedor principal */
+
+/* Información de contacto */
 .contact-info {
-  flex: 1;
-  padding: 30px;
+  width: 100%; /* Ancho completo */
+  margin: 0; /* Sin márgenes adicionales */
 }
 
 .contact-info h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f0f0e;
 }
 
 .contact-info p {
-  margin-bottom: 15px;
-  font-size: 16px;
+  margin: 10px 0;
+  font-size: 18px;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -56,40 +41,35 @@ body {
 
 .social-icons {
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 20px;
+  justify-content: center;
 }
 
-.social-icons a {
-  color: white;
-  font-size: 18px;
-  padding: 10px;
-  border: 1px solid white;
+.social-icons a img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-icons a:hover {
-  background: white;
-  color: black;
+.social-icons a img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
 /* Formulario */
 .contact-form {
-  flex: 1;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  width: 100%; /* Alinea el formulario con el ancho del contenedor */
+  max-width: 600px; /* Limita el ancho máximo */
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .contact-form form {
   display: flex;
   flex-direction: column;
-}
-
-.form-group {
-  position: relative;
-  margin-bottom: 20px;
+  gap: 15px; /* Espacio entre los campos */
 }
 
 .form-group input,
@@ -98,36 +78,45 @@ body {
   padding: 15px;
   background: rgba(255, 255, 255, 0.9);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
   outline: none;
 }
 
 .form-group textarea {
   resize: none;
-  height: 100px;
-}
-
-.form-group i {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  color: #555;
+  height: 120px;
 }
 
 .btn {
   padding: 15px;
   background: #ff3333;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background: #cc0000;
+  transform: scale(1.05);
+}
+
+/* Mapa */
+.map-container {
+  width: 100%;
+  max-width: 800px; /* Limita el tamaño del mapa */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.map-container iframe {
+  width: 100%; /* Asegura que sea responsivo */
+  height: 400px;
+  border-radius: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
 }
