@@ -1,2 +1,76 @@
-<h1>Página de Inicio</h1>
-<p>Bienvenido a la página de inicio.</p>
+<div class="banner-container">
+    <img src="assets/banner.jpg.webp" alt="Banner principal de Llamitas Sport" class="banner-image" />
+    <div class="banner-overlay"></div> 
+    <div class="banner-content">
+      <h1>¡Bienvenido a Llamitas Sport!</h1>
+      <p>Explora nuestra tienda y encuentra todo lo que necesitas para tus deportes favoritos.</p>
+      <button class="action-button" (click)="onAction()">Más Información</button>
+    </div>
+  </div>
+  
+  
+  <main>
+    <!-- Nosotros -->
+    <section class="nosotros">
+      <h1>Sports Llamita</h1>
+      <div class="nosotros-content">
+        <div class="img-nosotro">
+          <img src="assets/llamita.png" alt="Imagen de Sports Llamita">
+        </div>
+        <div class="text-nosotro">
+          <p>
+            Bienvenidos a Sports Llamita, la tienda que ofrece todo lo que necesitas para tus actividades deportivas. 
+            Nos especializamos en productos de calidad, brindándote lo mejor para tu entrenamiento y estilo de vida saludable.
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Productos Más Vendidos -->
+    <section class="best-sellers" aria-labelledby="bestsellers-title">
+      <h2 id="bestsellers-title">Productos Más Vendidos</h2>
+      <div class="product-grid">
+        <!-- Producto 1 -->
+        <article class="product-card">
+          <img src="assets/ropa1.jpg" alt="Zapatillas Deportivas" />
+          <h3>Zapatillas Deportivas</h3>
+          <p class="product-price">$75.00</p>
+          <div class="product-buttons">
+            <button class="view-more">Ver Más</button>
+          </div>
+        </article>
+        <!-- Producto 2 -->
+        <article class="product-card">
+          <img src="assets/ropa2.jpg" alt="Camiseta Dry Fit" />
+          <h3>Camiseta Dry Fit</h3>
+          <p class="product-price">$25.00</p>
+          <div class="product-buttons">
+            <button class="view-more">Ver Más</button>
+          </div>
+        </article>
+        <!-- Producto 3 -->
+        <article class="product-card">
+          <img src="assets/ropa3.jpg" alt="Pantalón Deportivo" />
+          <h3>Pantalón Deportivo</h3>
+          <p class="product-price">$40.00</p>
+          <div class="product-buttons">
+            <button class="view-more">Ver Más</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  
+    <!-- Ofertas Especiales -->
+    <section class="promotions" aria-labelledby="promotions-title">
+      <h2 id="promotions-title">Ofertas Especiales</h2>
+      <div class="promo-banner">
+        <img src="assets/promo.jpg" alt="Banner de promoción especial" />
+        <div class="promo-text">
+          <h3>¡Compra 2 y lleva 1 gratis!</h3>
+          <p>Aprovecha esta oferta por tiempo limitado en nuestra colección de invierno.</p>
+          <button class="promo-button">Ver Promoción</button>
+        </div>
+      </div>
+    </section>
+  </main>
+ <!--Sergio--> 
