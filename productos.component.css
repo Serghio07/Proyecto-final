@@ -1,0 +1,16 @@
+.productos {
+    padding: 20px;
+  }
+  
+  .lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .producto {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+  }

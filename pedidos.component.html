@@ -1,0 +1,38 @@
+<div class="pedidos">
+    <h1>Gestión de Pedidos</h1>
+    <button (click)="openForm('create')">Registrar Pedido</button>
+    <table>
+      <thead>
+        <tr>
+          <th>N° Pedido</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Costo de Envío</th>
+          <th>Total</th>
+          <th>Fecha de Entrega</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of pedidos">
+          <td>{{ pedido.id }}</td>
+          <td>{{ pedido.producto }}</td>
+          <td>{{ pedido.precio }}</td>
+          <td>{{ pedido.costoEnvio }}</td>
+          <td>{{ pedido.total }}</td>
+          <td>{{ pedido.fechaEntrega }}</td>
+          <td>
+            <button (click)="openForm('edit', pedido)">Modificar</button>
+            <button (click)="deletePedido(pedido)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-pedido-form
+      *ngIf="selectedPedido || formMode === 'create'"
+      [pedido]="selectedPedido"
+      (cancel)="closeForm()"
+      (save)="savePedido($event)"
+    ></app-pedido-form>
+  </div>
+  <!--javier-->

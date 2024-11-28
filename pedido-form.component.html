@@ -1,0 +1,15 @@
+<div class="formulario-pedido">
+    <h2>{{ pedido ? 'Modificar Pedido' : 'Registrar Pedido' }}</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label>Producto:</label>
+      <input [(ngModel)]="localPedido.producto" name="producto" required />
+      <label>Precio:</label>
+      <input [(ngModel)]="localPedido.precio" name="precio" type="number" required />
+      <label>Costo de Envío:</label>
+      <input [(ngModel)]="localPedido.costoEnvio" name="costoEnvio" type="number" required />
+      <label>Fecha de Entrega:</label>
+      <input [(ngModel)]="localPedido.fechaEntrega" name="fechaEntrega" type="date" required />
+      <button type="submit">Guardar</button>
+      <button type="button" (click)="cancel.emit()">Cancelar</button>
+    </form>
+  </div>

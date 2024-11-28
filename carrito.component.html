@@ -1,0 +1,13 @@
+<div class="carrito">
+    <h1>Carrito de Compras</h1>
+    <div *ngIf="carrito.length > 0; else vacio">
+      <div *ngFor="let producto of carrito" class="producto-carrito">
+        <p>{{ producto.nombre }}</p>
+        <p>Precio: {{ producto.precio }} USD</p>
+      </div>
+      <button (click)="completarPedido()">Completar Pedido</button>
+    </div>
+    <ng-template #vacio>
+      <p>No hay productos en el carrito.</p>
+    </ng-template>
+  </div>

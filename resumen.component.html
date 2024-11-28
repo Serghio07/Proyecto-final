@@ -1,0 +1,10 @@
+<div class="resumen">
+    <h1>Resumen del Pedido</h1>
+    <ul>
+      <li *ngFor="let producto of carrito">
+        {{ producto.nombre }} - {{ producto.precio }} USD
+      </li>
+    </ul>
+    <p><strong>Total:</strong> {{ total }} USD</p>
+    <button>Confirmar Pedido</button>
+  </div>
