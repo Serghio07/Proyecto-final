@@ -1,2 +1,49 @@
 <h1>Inventario</h1>
-<p>Aquí está el inventario de productos.</p>
+
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Precio</th>
+      <th>Costo de Envío</th>
+      <th>Total</th>
+      <th>Fecha de Entrega</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.idProducto }}</td>
+      <td>{{ producto.Precio }}</td>
+      <td>{{ producto.CostoEnvio }}</td>
+      <td>{{ producto.Total }}</td>
+      <td>{{ producto.FechaEntrega | date }}</td>
+      <td>
+        <button (click)="seleccionarProducto(producto)">Editar</button>
+        <button (click)="eliminarProducto(producto.idProducto)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>{{ editMode ? 'Editar Producto' : 'Registrar Producto' }}</h2>
+<form [formGroup]="productoForm" (ngSubmit)="editMode ? actualizarProducto() : crearProducto()">
+  <div>
+    <label>Precio:</label>
+    <input type="number" formControlName="Precio" />
+  </div>
+  <div>
+    <label>Costo de Envío:</label>
+    <input type="number" formControlName="CostoEnvio" />
+  </div>
+  <div>
+    <label>Total:</label>
+    <input type="number" formControlName="Total" />
+  </div>
+  <div>
+    <label>Fecha de Entrega:</label>
+    <input type="date" formControlName="FechaEntrega" />
+  </div>
+  <button type="submit">{{ editMode ? 'Actualizar' : 'Registrar' }}</button>
+  <button type="button" (click)="productoForm.reset(); editMode = false">Cancelar</button>
+</form>
