@@ -1,0 +1,81 @@
+    /* General Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Gradient background */
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Navbar Links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 5px 10px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+      color: #FFEB3B; /* Hover text color */
+    }
+
+    /* Underline Animation */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #FFEB3B; /* Hover underline color */
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Responsive Navbar for Small Screens */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+      }
+    }
