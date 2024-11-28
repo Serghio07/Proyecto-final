@@ -1,23 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ViewEncapsulation } from '@angular/core';
+
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [RouterLink],
-  template: `
-    <nav class="navbar">
-      <div class="logo">
-        <a routerLink="/inicio">Mi Proyecto</a>
-      </div>
-      <ul class="nav-links">
-        <li><a routerLink="/inicio">Inicio</a></li>
-        <li><a routerLink="/inventario">Inventario</a></li>
-        <li><a routerLink="/pedidos">Pedidos</a></li>
-        <li><a routerLink="/contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  `,
+  templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
+  encapsulation: ViewEncapsulation.None // Desactiva la encapsulación de estilos
+
 })
 export class NavbarComponent {}

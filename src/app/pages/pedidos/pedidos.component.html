@@ -1,2 +1,70 @@
-<h1>Pedidos</h1>
-<p>Gestión de pedidos.</p>
+<section class="container">
+  <header>Pedido de Ropa Deportiva</header>
+  <form action="#" class="form">
+    <!-- Datos del Cliente -->
+    <div class="input-box">
+      <label>Nombre Completo</label>
+      <input type="text" placeholder="Ingresa tu nombre completo" required />
+    </div>
+
+    <div class="input-box">
+      <label>Email</label>
+      <input type="email" placeholder="Ingresa tu correo electrónico" required />
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <label>Número Telefónico</label>
+        <input type="tel" placeholder="Ingresa tu número telefónico" required />
+      </div>
+      <div class="input-box">
+        <label>Dirección</label>
+        <input type="text" placeholder="Ingresa tu dirección completa" required />
+      </div>
+    </div>
+
+    <!-- Detalles del Pedido -->
+    <div class="input-box">
+      <label>Tipo de Prenda</label>
+      <select>
+        <option hidden>Selecciona una prenda</option>
+        <option>Camiseta</option>
+        <option>Short</option>
+        <option>Pantalón</option>
+        <option>Chamarra</option>
+      </select>
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <label>Talla</label>
+        <select>
+          <option hidden>Selecciona una talla</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+      </div>
+      <div class="input-box">
+        <label>Color</label>
+        <input type="text" placeholder="Escribe el color de la prenda" required />
+      </div>
+    </div>
+
+    <!-- Cantidad y Nota -->
+    <div class="input-box">
+      <label>Cantidad</label>
+      <input type="number" placeholder="Número de prendas" required />
+    </div>
+
+    <div class="input-box">
+      <label>Notas Adicionales</label>
+      <textarea placeholder="Ejemplo: Personalización con logotipo o nombre" rows="4"></textarea>
+    </div>
+
+    <!-- Botón de Envío -->
+    <button>Realizar Pedido</button>
+  </form>
+</section>

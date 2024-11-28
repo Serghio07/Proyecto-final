@@ -1,9 +1,125 @@
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f4f4f4;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Footer General */
+.footer {
+  background-color: #1f1f1f; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 40px;
+  overflow: hidden; /* Para las animaciones */
+  position: relative;
+}
+
+/* Contenedor principal */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: slide-in 1.5s ease-out; /* Animación de entrada */
+}
+
+/* Sección izquierda */
+.footer-left {
+  flex: 1;
+  text-align: left;
+  animation: fade-in 2s ease-in; /* Animación de desvanecimiento */
+}
+
+.footer-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sección derecha */
+.footer-right {
+  flex: 1;
+  text-align: left;
+  animation: fade-in 2s ease-in;
+}
+
+.footer-right h5 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Redes Sociales */
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px; /* Espaciado entre los íconos */
+  animation: bounce 1.5s infinite ease-in-out; /* Rebote sutil */
+}
+
+.social-link img {
+  width: 30px; /* Tamaño uniforme */
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Efectos al pasar el cursor */
+}
+
+.social-link img:hover {
+  transform: scale(1.3) rotate(10deg); /* Zoom y rotación */
+  filter: brightness(1.5); /* Más brillo */
+}
+
+/* Línea separadora */
+hr {
+  border: 0.5px solid #444;
+  margin: 20px 0;
+  opacity: 0.8;
+  animation: fade-in 2s ease-in;
+}
+
+/* Derechos reservados */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  animation: fade-in 2s ease-in;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+/* Animaciones Keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
