@@ -1,43 +1,79 @@
-<div class="container mt-5">
-    <h1 class="text-center">Contacto</h1>
-  
-    <!-- Formulario -->
-    <div class="card mx-auto mt-4 contacto-card">
-      <div class="card-body">
-        <form>
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Tu Nombre:</label>
-            <input type="text" id="nombre" class="form-control" placeholder="Dato modificable">
-          </div>
-          <div class="mb-3">
-            <label for="correo" class="form-label">Tu Correo:</label>
-            <input type="email" id="correo" class="form-control" placeholder="Dato modificable">
-          </div>
-          <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje:</label>
-            <textarea id="mensaje" class="form-control" rows="3" placeholder="Dato modificable"></textarea>
-          </div>
-          <button type="submit" class="btn btn-warning w-100 fw-bold">ENVIAR</button>
-        </form>
-      </div>
+<div class="container d-flex flex-column align-items-center justify-content-center mt-5">
+  <!-- Título -->
+  <h1 class="text-center mb-4">Contáctanos</h1>
+
+  <!-- Formulario -->
+  <div class="card contacto-card shadow-lg p-4">
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="nombre" class="form-label fw-bold">Tu Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control form-control-lg"
+            placeholder="Escribe tu nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label fw-bold">Tu Correo</label>
+          <input
+            type="email"
+            id="correo"
+            class="form-control form-control-lg"
+            placeholder="Escribe tu correo"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label fw-bold">Mensaje</label>
+          <textarea
+            id="mensaje"
+            class="form-control form-control-lg"
+            rows="4"
+            placeholder="Escribe tu mensaje"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-warning w-100 fw-bold btn-lg shadow-lg"
+        >
+          ENVIAR
+        </button>
+      </form>
     </div>
-  
-    <!-- Redes Sociales -->
-    <div class="text-center mt-5">
-      <a href="#" class="mx-2"><img src="assets/instagram-icon.png" alt="Instagram" class="icon"></a>
-      <a href="#" class="mx-2"><img src="assets/facebook-icon.png" alt="Facebook" class="icon"></a>
-      <a href="#" class="mx-2"><img src="assets/youtube-icon.png" alt="YouTube" class="icon"></a>
-      <a href="#" class="mx-2"><img src="assets/tiktok-icon.png" alt="TikTok" class="icon"></a>
-    </div>
-  
-    <!-- Mapa -->
-    <div class="mt-5">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509404!2d-123.12073768468157!3d37.77928097975673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064ddf7e109%3A0x0!2sParque%20de%20la%20Explanada!5e0!3m2!1ses-419!2sbo!4v1634172347808!5m2!1ses-419!2sbo"
-        class="map"
-        allowfullscreen=""
-        title="Mapa de la ubicación de LlamitaSport"
-      ></iframe>
-    </div>
-  
   </div>
+
+  <!-- Redes Sociales -->
+  <div class="text-center mt-5">
+    <h5>Síguenos en nuestras redes sociales</h5>
+    <div class="social-icons mt-3 d-flex justify-content-center">
+      <a href="#" class="mx-2">
+        <img src="/instagram.png" alt="Instagram" class="icon" />
+      </a>
+      <a href="#" class="mx-2">
+        <img src="/facebook.png" alt="Facebook" class="icon" />
+      </a>
+      <a href="#" class="mx-2">
+        <img src="/youtube.png" alt="YouTube" class="icon" />
+      </a>
+      <a href="#" class="mx-2">
+        <img src="/tiktok.png" alt="TikTok" class="icon" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Mapa -->
+  <div class="mt-5 text-center">
+    <h5>Ubicación</h5>
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6432.906401220068!2d-68.11829963055428!3d-16.52463194704394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f20ee187a3103%3A0x2f2bb2b7df32a24d!2sUniversidad%20Cat%C3%B3lica%20Boliviana%20%22San%20Pablo%22!5e0!3m2!1ses-419!2sbo!4v1732773026255!5m2!1ses-419!2sbo"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>

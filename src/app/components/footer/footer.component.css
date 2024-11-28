@@ -1,9 +1,70 @@
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f4f4f4;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+/* Footer general */
+.footer {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 100px;
+  margin-left: -10px;
+  margin-right: -8px;
+  margin-bottom: -10px;
+  padding-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* Sección izquierda */
+.footer-left {
+  text-align: left;
+}
+
+.footer-left h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-left p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Sección derecha */
+.footer-right {
+  text-align: left;
+}
+
+.footer-right h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Línea separadora */
+hr {
+  border: 0.5px solid #444;
+  margin: 10px 0;
+}
+
+/* Derechos reservados */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}

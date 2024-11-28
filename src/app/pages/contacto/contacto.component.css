@@ -1,0 +1,77 @@
+/* Contenedor */
+.container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Card del Formulario */
+  .contacto-card {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contacto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Input y Textarea */
+  form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  form .form-control:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+  }
+  
+  /* Botón Enviar */
+  .btn-warning {
+    background-color: #ffd700;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-warning:hover {
+    background-color: #f2c200;
+    transform: scale(1.05);
+  }
+  
+  /* Redes Sociales */
+  .social-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Mapa */
+  .map {
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+    margin-top: 20px;
+  }
+  
+  /* Títulos */
+  h1, h5 {
+    font-weight: bold;
+    color: #444;
+  }
+  

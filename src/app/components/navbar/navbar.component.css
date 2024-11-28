@@ -1,81 +1,65 @@
-    /* General Navbar Styles */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Gradient background */
-      color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* NAVEGACION PRINCIPAL **/
 
-    .navbar .logo a {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-    }
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ff5722; /* Rojo más intenso para contraste */
+  --secundario: #c62828; /* Rojo oscuro como fondo */
+  --gris: #757575;
+  --grisClaro: #f1f1f1; /* Gris muy claro para contrastar */
+  --acento: #d56515; /* Amarillo dorado como acento */
+}
 
-    /* Navbar Links */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+.nav-bg {
+  background-color: var(--secundario);
+  margin-left: -10px;
+  margin-right: -8px;
+}
 
-    .nav-links li {
-      position: relative;
-    }
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secundario); /* Fondo de la navegación en rojo oscuro */
+}
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 5px 10px;
-      transition: color 0.3s ease-in-out;
-    }
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Alinea los elementos en el centro */
+  }
+}
 
-    .nav-links a:hover {
-      color: #FFEB3B; /* Hover text color */
-    }
+.navegacion-principal a {
+  display: block;
+  text-align: center;
+  color: var(--blanco); /* Color blanco para el texto */
+  text-decoration: none;
+  font-size: 1.6rem; /* Reducción del tamaño de fuente para mejorar legibilidad */
+  font-weight: bold;
+  padding: 1rem 2rem; /* Aumentado padding para un área de clic más grande */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Añadido efecto de transición */
+}
 
-    /* Underline Animation */
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #FFEB3B; /* Hover underline color */
-      transition: width 0.3s ease-in-out;
-    }
+.navegacion-principal a:hover {
+  background-color: var(--acento); /* Amarillo dorado como hover */
+  color: var(--oscuro); /* Cambio a color oscuro para contraste */
+  border-radius: 5px; /* Bordes redondeados para un toque moderno */
+}
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+.navegacion-principal a:active {
+  background-color: var(--primario); /* Rojo cuando el enlace está activo */
+  color: var(--blanco); /* Blanco cuando se hace clic */
+}
 
-    /* Responsive Navbar for Small Screens */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+/* Estilos adicionales para la mejora de la estética */
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto 23rem;
+    column-gap: 1rem;
+  }
+}
 
-      .nav-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .nav-links a {
-        padding: 10px;
-        width: 100%;
-        text-align: left;
-      }
-    }

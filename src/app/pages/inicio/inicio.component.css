@@ -1,0 +1,288 @@
+/* Banner Principal */
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Imagen del Banner */
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%) contrast(1.2);
+    transform: scale(1.1);
+    animation: zoomOut 10s infinite ease-in-out;
+  }
+  
+  /* Capa Oscura */
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurecimiento controlado */
+    z-index: 1;
+  }
+  
+  /* Contenido del Banner */
+  .banner-content {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 2; /* Coloca el contenido por encima de la capa oscura */
+    animation: slideIn 1.5s ease-out;
+  }
+  
+  @keyframes zoomOut {
+    0%, 100% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Estilo del Título */
+  .banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilo del Texto */
+  .banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Botón del Banner */
+  .banner-content button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .banner-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  
+  /* Productos Más Vendidos */
+  .best-sellers {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .best-sellers h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card img:hover {
+    transform: scale(1.1);
+  }
+  
+  .product-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+  
+  .product-card p {
+    font-size: 1.2rem;
+    color: #ff5722;
+    margin-bottom: 15px;
+  }
+  
+  .product-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .product-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .product-buttons .view-more {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .product-buttons .view-more:hover {
+    background-color: #0056b3;
+  }
+  
+  .product-buttons .add-to-cart {
+    background-color: #ff5722;
+    color: white;
+  }
+  
+  .product-buttons .add-to-cart:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+  }
+  
+  .nosotros {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Fondo suave */
+    text-align: center;
+  }
+  
+  .nosotros h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .nosotros-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite adaptarse a pantallas pequeñas */
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre bloques */
+  }
+  
+  .img-nosotro {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .img-nosotro img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  }
+  
+  .text-nosotro {
+    flex: 1;
+    max-width: 500px;
+    text-align: left; /* Alineación del texto */
+  }
+  
+  .text-nosotro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  /* Estilo responsive */
+  @media (max-width: 768px) {
+    .nosotros-content {
+      flex-direction: column; /* Apila en pantallas pequeñas */
+      text-align: center;
+    }
+  
+    .text-nosotro {
+      text-align: center;
+    }
+  }
+  
+  /* Promociones */
+  .promotions {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .promo-banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 20px auto;
+    height: 300px;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .promo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(85%);
+    transform: scale(1.05);
+    transition: transform 10s ease-in-out;
+  }
+  
+  .promo-banner:hover img {
+    transform: scale(1.15);
+  }
+  

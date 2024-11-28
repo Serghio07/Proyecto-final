@@ -1,2 +1,58 @@
-<h1>Pedidos</h1>
-<p>Gestión de pedidos.</p>
+<div class="hola container d-flex flex-column align-items-center justify-content-center mt-5">
+    <!-- Título -->
+    <h1 class="text-center mb-4">Formulario de Pedido</h1>
+  
+    <!-- Formulario -->
+    <div class="card pedido-card shadow-lg p-4">
+      <div class="card-body">
+        <form >
+          
+          <!-- Producto -->
+          <div class="mb-3">
+            <label for="producto" class="form-label fw-bold">Producto</label>
+            <input
+              type="text"
+              id="producto"
+              formControlName="producto"
+              class="form-control form-control-lg"
+              placeholder="Escribe el nombre del producto"
+            />
+          </div>
+  
+          <!-- Tipo de Producto -->
+          <div class="mb-3">
+            <label for="tipoProducto" class="form-label fw-bold">Tipo de Producto</label>
+            <select
+              id="tipoProducto"
+              formControlName="tipoProducto"
+              class="form-select form-select-lg"
+            >
+              <option value="">Selecciona el tipo de producto</option>
+              <option value="electronic">Electrónica</option>
+              <option value="clothing">Ropa</option>
+              <option value="food">Comida</option>
+              <option value="furniture">Muebles</option>
+            </select>
+          </div>
+  
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="form-control form-control-lg"
+              placeholder="Escribe tu correo electrónico"
+            />
+          </div>
+  
+          <!-- Botón Enviar -->
+          <button type="submit" class="btn btn-primary w-100 fw-bold btn-lg shadow-lg" [disabled]="!pedidosForm.valid">
+            Enviar Pedido
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
